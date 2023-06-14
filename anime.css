@@ -8,12 +8,12 @@
   /* Global styles */
   body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #d1c4e9;
   }
   
   /* Header section */
   header {
-    background-color: #ff4081;
+    background-color: #9575cd;
     color: #fff;
     padding: 20px;
   }
@@ -41,7 +41,7 @@
   }
   
   #search-btn {
-    background-color: #ff9c00;
+    background-color: #cc9cac;
     color: #fff;
     padding: 8px 15px;
     border: none;
@@ -79,7 +79,7 @@
   
   /* Hero section */
   .hero {
-    background-color: #ff4081;
+    background-color: #7c4dff;
     color: #fff;
     padding: 100px 20px;
     text-align: center;
@@ -96,8 +96,8 @@
   }
   
   .btn {
-    background-color: #fff;
-    color: #ff4081;
+    background-color: #cc9cac;
+    color: #fff;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 4px;
@@ -105,71 +105,76 @@
   }
   
   .btn:hover {
-    background-color: #e0e0e0;
+    background-color: #9575cd;
   }
   
-/* Anime section */
-.anime-section {
+  /* Anime section */
+  .anime-section {
     padding: 40px 20px;
     text-align: center;
-    opacity: 0; /* Start with opacity set to 0 */
-    transform: translateY(50px); /* Move the section 50 pixels down */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Apply transition effect */
   }
   
-  .anime-section.show {
-    opacity: 1; /* Set opacity to 1 when the section is visible */
-    transform: translateY(0); /* Move the section back to its original position */
+  .anime-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .view-all {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #7c4dff;
+  }
+  
+  .view-all:hover {
+    text-decoration: underline;
   }
   
   /* Movies section */
   .movies-section {
-    background-color: #f5f5f5;
+    background-color: #d1c4e9;
     padding: 40px 20px;
     text-align: center;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
   }
   
-  .movies-section.show {
-    opacity: 1;
-    transform: translateY(0);
+  .movies-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
   
   /* News section */
   .news-section {
     padding: 40px 20px;
     text-align: center;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
   }
   
-  .news-section.show {
-    opacity: 1;
-    transform: translateY(0);
+  .news-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
   
   /* Community section */
   .community-section {
-    background-color: #ff4081;
+    background-color: #9575cd;
     color: #fff;
     padding: 100px 20px;
     text-align: center;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
   }
   
-  .community-section.show {
-    opacity: 1;
-    transform: translateY(0);
+  .community-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .community-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
   }
   
   /* Footer section */
   footer {
-    background-color: #ff4081;
+    background-color: #9575cd;
     color: #fff;
     padding: 20px;
     text-align: center;
