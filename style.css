@@ -99,3 +99,74 @@ body {
 .footer p {
   margin: 0;
 }
+#commentsContainer {
+  margin-top: 20px;
+}
+
+.comment {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment:last-child {
+  margin-bottom: 0;
+}
+
+.comment-content {
+  margin-bottom: 10px;
+}
+
+.comment-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.author-name {
+  font-weight: bold;
+}
+
+.comment-text {
+  color: #333;
+}
+
+.comment-date {
+  color: #999;
+  font-size: 14px;
+}
+
+#videoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.video-card {
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .video-card {
+    width: calc(25% - 20px);
+    margin-right: 20px;
+  }
+
+  .video-card:nth-child(4n) {
+    margin-right: 0;
+  }
+}
