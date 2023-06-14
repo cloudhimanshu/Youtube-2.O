@@ -3,7 +3,7 @@ const apiKey = "AIzaSyBExZ6bdiUfjYAIHc4Ginbt9itZ_F_yR1A";
 
 // Fetch YouTube public videos
 function fetchVideos() {
-  const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=6&key=${apiKey}`;
+  const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=20&key=${apiKey}`;
 
   fetch(url)
     .then((response) => response.json())
@@ -18,7 +18,7 @@ function fetchVideos() {
 
           // Create video card
           const cardHtml = `
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="card">
                 <img src="${videoThumbnail}" class="card-img-top" alt="${videoTitle}">
                 <div class="card-body">
@@ -43,32 +43,12 @@ function fetchVideos() {
 function watchVideo(videoId) {
   const videoUrl = `https://www.youtube.com/embed/${videoId}`;
 
-  // Create modal to watch video
-  const modalHtml = `
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="videoModalLabel">Watch Video</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="${videoUrl}" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
+  // Replace the existing video container with the new video iframe
+  document.getElementById("videoContainer").innerHTML = `
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="${videoUrl}" allowfullscreen></iframe>
     </div>
   `;
-
-  // Append modal to the body
-  document.body.innerHTML += modalHtml;
-
-  // Show the modal
-  $("#videoModal").modal("show");
 }
 
 // Fetch videos on page load
