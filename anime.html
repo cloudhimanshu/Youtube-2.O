@@ -1,86 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Anime Haven - Your ultimate destination for anime lovers. Discover the latest anime series, movies, and news. Join our vibrant community and explore the fascinating world of anime.">
+    <meta name="keywords" content="anime, anime series, anime movies, anime news, anime community">
+    <title>Anime Haven - Your Ultimate Anime Destination</title>
     <link rel="stylesheet" href="anime.css">
-    <title>Project:Anime</title>
-    
+    <style>
+        /* Add your custom CSS styles here */
+    </style>
 </head>
-   
 <body>
-    <!-- Header section starting point  -->
-    <img href="animeman.png" ></img>
+    <!-- Header section -->
     <header>
-        <a href="a" class="logo"><i class="fas fa-infinity"></i id=logo>Anime</a>
-        <nav class="nav">
-            <a id="navtext" href="#home">home</a>
-            <a id="navtext" href="#anime">anime</a>
-            <a id="navtext" href="#action">action</a>
-            <a id="navtext" href="#child">child</a>
-            <a id="navtext" href="#family">family</a>
-            <input  type="text" id="search" placeholder="Enter Anime Name">
-            <button type="button" id="submit" class="searchbtn">Search</button> 
-            
-        </nav><hr>
-    <!-- <div class="icons">
-        <i class="fa-solid fa-bars-filter"></i>
-        <i class="fas fa-search" id="search"></i>
-        <i class="fas fa-heart" id="heart"></i>
-    </div> -->
-    <section class="animelist">
-        <div class="animelist">
-            <a id="posters" href="naruto"><img src=sidhu.png style="padding: 21%;">Naruto</a>
-            <a id="posters" href="Naruto-Shippuden"><img src=sidhu.png style="padding: 21%;">Naruto Shippuden</a>
-            <a id="posters" href="dragonballz"><img src=sidhu.png style="padding: 21%;">dragon ball z</a>
-            <a id="posters" href="komicantcommunicate" ><img src=sidhu.png style="padding: 21%;">Komi can't communicate</img></a>
-            <a id="posters" href="blaze"><img src=sidhu.png style="padding: 21%;">Blaze</a>
-            <a id="posters" href="saitama"><img src=sidhu.png style="padding: 21%;">saitama</a>
-            <a id="posters" href="Doraemon"><img src=sidhu.png style="padding: 21%;">Doraemon</a>
-            <a id="posters" href="Shinchan"><img src=sidhu.png style="padding: 21%;">Shinchan</a>
+        <div class="top-bar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Anime Haven - Your Ultimate Anime Destination">
+                </a>
+            </div>
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Search for your favorite anime...">
+                <button type="button" id="search-btn">Search</button>
+            </div>
+            <div class="user-actions">
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="anime.html">Anime</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="genres.html">Genres</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Anime Haven</h1>
+            <p>Discover the latest anime series, movies, and news. Immerse yourself in captivating stories, breathtaking animation, and unforgettable characters.</p>
+            <a href="anime.html" class="btn">Explore Anime</a>
         </div>
     </section>
 
+    <!-- Anime section -->
+    <section class="anime-section">
+        <h2>Popular Anime Series</h2>
+        <div class="anime-list">
+            <!-- Add your anime cards here -->
+        </div>
+        <a href="anime.html" class="view-all">View All Anime</a>
+    </section>
 
-    </div>
-</header><hr>
-<footer class="footer">
-    <div class="footer">
-        <a id="footertext" href="Documentation">Documentation</a>
-        <a id="footertext" href="About-Us">About-Us</a>
-        <a id="footertext" href="Company-Established">Company-Established</a>
-        <a id="footertext" href="counties">counties</a>
-        <a id="footertext" href="japan">japan</a>
-        <a id="footertext" href="Signup">Signup</a>
-        <a id="footertext" href="More-Info">More-Info</a>
-        <a id="footertext" href="privacy-and-policy">privacy-and-policy</a>
-        <a id="footertext" href="legal">legal</a>
-        <a id="footertext" href="copyright-usage">copyright-usage</a>
-        <a id="footertext" href="90's-anime">90's-anime</a>
-        <a id="footertext" href="latest-anime">latest-anime</a>
-        <a id="footertext" href="Relaxing-anime">Relaxing-anime</a>
-        <a id="footertext" href="Naruto">Naruto</a>
-        <a id="footertext" href="Dragon-ball-z">Dragon-ball-z</a>
-        <a id="footertext" href="Saitama">Saitama</a>
-        <a id="footertext" href="komi-can't-communicate">komi-can't-communicate</a>
-        <a id="footertext" href="meet-Our-team">meet-Our-team</a>
-        <a id="footertext" href="contact-Us">contact-Us</a>
-        <a id="footertext" href="Share-Website">Share-Website</a>
-        <a id="footertext" href="Watch-Together">Watch-Together</a>
-        <a id="footertext" href="dubbed">dubbed</a>
-        <a id="footertext" href="subbed">subbed</a>
-        <a id="footertext" href="indian">indian</a>
+    <!-- Featured Movies section -->
+    <section class="movies-section">
+        <h2>Featured Anime Movies</h2>
+        <div class="movies-list">
+            <!-- Add your movie cards here -->
+        </div>
+        <a href="movies.html" class="view-all">View All Movies</a>
+    </section>
 
-    </div>
-</footer>
+    <!-- News section -->
+    <section class="news-section">
+        <h2>Latest Anime News</h2>
+        <div class="news-list">
+            <!-- Add your news articles here -->
+        </div>
+        <a href="news.html" class="view-all">View All News</a>
+    </section>
 
+    <!-- Community section -->
+    <section class="community-section">
+        <h2>Join Our Anime Community</h2>
+        <div class="community-content">
+            <p>Connect with fellow anime enthusiasts, participate in discussions, and share your love for anime.</p>
+            <a href="community.html" class="btn">Join Now</a>
+        </div>
+    </section>
 
-   
-    <!-- Custom js file -->
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="footer-logo.png" alt="Anime Haven - Your Ultimate Anime Destination">
+                </a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS file -->
     <script src="anime.js"></script>
-
 </body>
 </html>
