@@ -1,0 +1,105 @@
+*{
+    background-color: black ;
+    font-family:cursive;
+}
+.logo{
+    color: orange !important;
+    text-decoration: none !important;
+    display:flex !important;
+    width: 90%; 
+}
+.nav{
+    display: flex;
+    position:sticky !important;
+    background-color: green !important;;
+    height: 90%;
+    padding: 2%;
+    text-transform: bold !important;
+    border-radius: 12px;
+
+}
+
+
+
+
+#navtext{
+    background-color: green ;
+    display:inline-table !important;;
+    text-align: center;
+    text-decoration: none !important; 
+    color: white !important;
+    width: 70px;
+    
+}
+#navtext:hover{
+    text-transform: capitalize;
+    padding: 10px;
+    background-color: orange;
+    border-radius: 21px;
+}
+#search{
+    background: black;
+    color: aliceblue;
+    border-radius: 20px;
+}
+.searchbtn{
+    background: black !important;
+    height: 27px ;
+    width: 70px;
+    color: aliceblue;
+    text-align: center;
+    cursor: pointer;    
+    border-radius: 12px;
+}
+
+.searchbtn:hover{
+    background-color: red !important;
+    color: yellow !important;
+}
+.animelist{
+    background-color: green;
+    color: aliceblue;
+    display:flex !important;
+    padding: 40%;
+    height: 10px;
+    width: auto;
+    position: relative;
+    /* width: 91px; */
+    /* height: fit-content ; */
+    border-radius: 2%;
+
+}
+
+#footertext{
+
+     display: inline-table;
+    padding: 8px;
+    border-radius: 9px;
+    color: white !important;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    
+}
+#footertext::hover{
+    background-color: red;
+    color: red ;
+}
+.animelist{
+
+
+  color: aliceblue;
+  font-family: 'Varela Round', sans-serif;
+  /* border-radius: 12px; */
+}
+.animelist img{
+position: relative;
+  margin: 0px auto;
+  min-height: 10vh;
+  font-family: 'Varela Round', sans-serif;
+  display: flex;
+  border-radius: 12px;
+  background-image: url('sidhu.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

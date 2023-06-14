@@ -1,0 +1,13 @@
+*{  background-color: black;
+    opacity: 122px;
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ #navbar{
+    color: green !important;
+}
+#navbartext{
+    color: green !important;;
+}
+#navbartext:hover{
+    background-color: red;
+} 
