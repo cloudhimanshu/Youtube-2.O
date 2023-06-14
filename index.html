@@ -33,14 +33,16 @@
         </ul>
         <div class="search-box ml-auto">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Search" id="searchInput">
             <div class="input-group-append">
-              <button class="btn btn-primary" type="button">
+              <button class="btn btn-primary" type="button" onclick="searchVideos()">
                 <i class="fas fa-search"></i>
               </button>
             </div>
           </div>
         </div>
+        <div id="videoContainer" class="row"></div>
+        
       </div>
     </div>
   </nav>
