@@ -1,12 +1,58 @@
 // YouTube Data API key
 const apiKey = "AIzaSyBExZ6bdiUfjYAIHc4Ginbt9itZ_F_yR1A";
 
-// Fetch YouTube videos based on search query
+// Function to fetch recommended videos
+function fetchRecommendedVideos() {
+  const maxResults = 20; // Number of recommended videos to fetch
+  const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=${maxResults}&key=${apiKey}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.items.length > 0) {
+        const videos = data.items;
+
+        // Clear existing video container
+        document.getElementById("videoContainer").innerHTML = "";
+
+        videos.forEach((video) => {
+          const videoId = video.id;
+          const videoTitle = video.snippet.title;
+          const videoThumbnail = video.snippet.thumbnails.medium.url;
+
+          // Create video card
+          const cardHtml = `
+            <div class="col-md-3">
+              <div class="card">
+                <img src="${videoThumbnail}" class="card-img-top" alt="${videoTitle}">
+                <div class="card-body">
+                  <h5 class="card-title">${videoTitle}</h5>
+                  <button class="btn btn-primary" onclick="watchVideo('${videoId}')">Watch Video</button>
+                </div>
+              </div>
+            </div>
+          `;
+
+          // Append video card to the container
+          document.getElementById("videoContainer").innerHTML += cardHtml;
+        });
+      } else {
+        // No recommended videos found
+        document.getElementById("videoContainer").innerHTML = "No recommended videos found.";
+      }
+    })
+    .catch((error) => {
+      console.log("Error fetching recommended videos:", error);
+    });
+}
+
+// Function to search and display YouTube videos
 function searchVideos() {
   const query = document.getElementById("searchInput").value.trim();
 
   if (query !== "") {
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&key=${apiKey}`;
+    const maxResults = 80; // Number of videos to fetch
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=${query}&key=${apiKey}`;
 
     fetch(url)
       .then((response) => response.json())
@@ -60,3 +106,8 @@ function watchVideo(videoId) {
     </div>
   `;
 }
+
+// Fetch recommended videos on page load
+document.addEventListener("DOMContentLoaded", function () {
+  fetchRecommendedVideos();
+});
