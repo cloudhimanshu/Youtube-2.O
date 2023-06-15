@@ -1,26 +1,27 @@
-/* Custom CSS */
 body {
   background-color: #f8f8f8;
   font-family: Arial, sans-serif;
+  margin: 0;
 }
 
 .navbar {
-  background-color: #ffffff;
-  border-bottom: 1px solid #dddddd;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
 }
 
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
-  color: #333333;
+  color: #333;
 }
 
 .navbar-toggler-icon {
-  background-color: #333333;
+  background-color: #333;
 }
 
 .nav-link {
-  color: #333333;
+  color: #333;
 }
 
 .search-box {
@@ -37,21 +38,22 @@ body {
 }
 
 .btn-primary {
-  background-color: #ff3366;
-  border-color: #ff3366;
+  background-color: #ff0000;
+  border-color: #ff0000;
   border-radius: 30px;
 }
 
 .jumbotron {
-  background-color: #333333;
-  color: #ffffff;
-  padding: 80px 0;
+  background-color: #000;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
 }
 
 .jumbotron h1 {
   font-size: 48px;
   font-weight: bold;
-  margin-bottom: 400px;
+  margin-bottom: 20px;
 }
 
 .jumbotron p {
@@ -59,18 +61,18 @@ body {
   margin-bottom: 40px;
 }
 
-.btn-lg {
-  padding: 12px 24px;
-  font-size: 18px;
-}
-
 .container {
   margin-top: 40px;
 }
 
+#videoContainer {
+  max-width: 100%;
+}
+
+
 .card {
-  background-color: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-img-top {
@@ -91,82 +93,72 @@ body {
 }
 
 .footer {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000;
+  color: #fff;
   padding: 20px 0;
+  text-align: center;
 }
 
 .footer p {
   margin: 0;
 }
+
+...
+
 #commentsContainer {
-  margin-top: 20px;
+  flex: 0 0 70%;
+  max-width: 70%;
+  margin-right: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
 }
 
 .comment {
   margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.comment:last-child {
-  margin-bottom: 0;
-}
-
-.comment-content {
-  margin-bottom: 10px;
-}
-
-.comment-author {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.user-image {
+.comment .user-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin-right: 10px;
   object-fit: cover;
+  margin-right: 10px;
 }
 
-.author-name {
+.comment .user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comment .user-name {
   font-weight: bold;
+  margin-right: 10px;
 }
 
-.comment-text {
+.comment .comment-text {
   color: #333;
 }
 
-.comment-date {
-  color: #999;
+.comment .comment-date {
+  font-size: 12px;
+  color: #888;
+}
+
+.comment .reply-button {
   font-size: 14px;
+  color: #888;
+  margin-left: 10px;
 }
 
-#videoContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-top: 20px;
-}
+...
 
-.video-card {
-  width: 100%;
-  max-width: 320px;
-  margin-bottom: 20px;
-}
-
-@media (min-width: 576px) {
-  .video-card {
-    width: calc(25% - 20px);
-    margin-right: 20px;
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .video-card:nth-child(4n) {
-    margin-right: 0;
-  }
-}
+  #videoContainer,
+

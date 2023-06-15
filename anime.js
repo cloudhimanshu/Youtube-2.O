@@ -1,9 +1,9 @@
 // YouTube Data API key
-const apiKey = "AIzaSyBExZ6bdiUfjYAIHc4Ginbt9itZ_F_yR1A";
+const apiKey = "AIzaSyA9-BWw7UzkAXwc_UoOlNl08KjHZnsrudc";
 
 // Function to fetch recommended videos
 function fetchRecommendedVideos() {
-  const maxResults = 220; // Number of recommended videos to fetch
+  const maxResults = 111; // Number of recommended videos to fetch
   const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=${maxResults}&key=${apiKey}`;
 
   fetch(url)
