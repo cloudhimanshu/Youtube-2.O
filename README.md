@@ -16,7 +16,7 @@ Anime-Rangers is a web application that allows users to explore and watch a wide
 - The recommended videos sidebar offers users a curated collection of videos related to anime and cartoons.
 - These recommended videos are dynamically fetched using the YouTube Data API, ensuring a diverse selection of popular and trending content.
 
-## Technologies Used
+## Technologies Used In This Project Youtube 2.0
 
 - HTML: Markup language for building the structure and content of the website.
 - CSS: Styling language used to enhance the visual appearance and layout of the web pages. Utilizes Bootstrap and Tailwind CSS frameworks for responsive design.
