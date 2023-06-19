@@ -25,7 +25,7 @@ Anime-Rangers is a web application that allows users to explore and watch a wide
 
 ## Setup and Usage
 
-1. Clone the repository:
+1. Clone the repository::
 
    ```shell
    git clone https://github.com/your-username/anime-rangers.git
