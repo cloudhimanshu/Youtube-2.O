@@ -4,7 +4,7 @@ Anime-Rangers is a web application that allows users to explore and watch a wide
 
 ## Features 
 
-### Video Player
+### Video Player 
 - The website includes a high-quality video player that enables users to watch their favorite anime and cartoons with ease.
 - Users can navigate through the video, control playback, adjust volume, and switch to full-screen mode for an immersive viewing experience.
 
