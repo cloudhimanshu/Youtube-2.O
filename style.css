@@ -39,19 +39,39 @@ body {
 
 .btn-primary {
   background-color: #ff0000;
+  background-image: ;
   border-color: #ff0000;
   border-radius: 30px;
 }
 
+@keyframes colorChange {
+  0% {
+    background-color: rgb(143, 70, 216);
+  }
+  15% {
+    background-color: rgb(234, 37, 218);
+  }
+  30% {
+    background-color: rgb(0, 128, 0);
+  }
+  55% {
+    background-color: rgb(0, 0, 255);
+  }
+  100% {
+    background-color: rgb(143, 70, 216);
+  }
+}
+
 .jumbotron {
-  background-color: #000;
+  animation: colorChange 5s infinite; /* 5s duration, infinitely repeating */
   color: #fff;
   padding: 100px 20px;
   text-align: center;
 }
 
+
 .jumbotron h1 {
-  font-size: 48px;
+  font-size: 68px;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -127,27 +147,34 @@ body {
   border-radius: 6px;
 }
 
+/* Reset the default card styles */
 .card {
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  width: 100%; /* Set the card width to 100% of its container */
 }
 
 .card-img-top {
-  height: 200px;
-  object-fit: cover;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  width: 100%; /* Set the image width to 100% of its container */
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+  border-radius: 0;
 }
 
 .card-title {
-  font-size: 16px;
+  font-size: 1.125rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-body {
-  padding: 10px;
+  padding: 0.5rem 0;
 }
+
 
 .footer {
   background-color: #000;
@@ -160,7 +187,7 @@ body {
   margin: 0;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
@@ -175,5 +202,44 @@ body {
   #sidebarContainer {
     margin-top: 20px;
     height: auto;
-  }
+  } */
+
+  body {
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
+
+.dark-mode-toggle {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: #888;
+    border-radius: 25px;
+    margin: 20px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #222;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked + label {
+    transform: translateX(100%);
+}
+
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+
