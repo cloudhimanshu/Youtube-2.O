@@ -3,7 +3,7 @@ const apiKey = "AIzaSyA9-BWw7UzkAXwc_UoOlNl08KjHZnsrudc";
 
 // Function to fetch recommended videos
 function fetchRecommendedVideos() {
-  const maxResults = 111; // Number of recommended videos to fetch
+  const maxResults = 11; // Number of recommended videos to fetch
   const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=${maxResults}&key=${apiKey}`;
 
   fetch(url)

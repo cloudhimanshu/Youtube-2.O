@@ -64,46 +64,11 @@ body {
 .container {
   margin-top: 40px;
 }
-
 #videoContainer {
-  max-width: 100%;
+  flex: 0 0 60%; /* Adjust the flex property to control the width */
+  max-width: 60%; /* Adjust the max-width property to make the container smaller */
 }
 
-
-.card {
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-}
-
-.card-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.card-body {
-  padding: 10px;
-}
-
-.footer {
-  background-color: #000;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer p {
-  margin: 0;
-}
-
-...
 
 #commentsContainer {
   flex: 0 0 70%;
@@ -152,7 +117,48 @@ body {
   margin-left: 10px;
 }
 
-...
+#sidebarContainer {
+  flex: 0 0 30%;
+  max-width: 30%;
+  height: calc(100vh - 110px);
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
 
 @media (max-width: 768px) {
   .container {
@@ -161,4 +167,13 @@ body {
   }
 
   #videoContainer,
+  #commentsContainer,
+  #sidebarContainer {
+    max-width: 100%;
+  }
 
+  #sidebarContainer {
+    margin-top: 20px;
+    height: auto;
+  }
+}
