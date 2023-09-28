@@ -2,44 +2,69 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
+const MongoClient = require("mongodb").MongoClient;
+const uri = "mongodb://localhost:27017"; // MongoDB connection URI
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-// Simulated user database (replace with a real database)
-const users = [];
 
-// Route for user registration
-app.post('/signup', (req, res) => {
-  const { username, password } = req.body;
+// Connect to the MongoDB server
+client.connect((err) => {
+    if (err) {
+        console.error("Error connecting to MongoDB:", err);
+        return;
+    }
+    console.log("Connected to MongoDB");
 
-  // Check if the username is already taken
-  if (users.find(user => user.username === username)) {
-    return res.status(400).json({ message: 'Username already exists.' });
-  }
+    // Specify the database and collection you want to work with
+    const db = client.db("mydatabase"); // Replace "mydatabase" with your database name
+    const collection = db.collection("users");
 
-  // Store the user in the database (in-memory storage for this example)
-  users.push({ username, password });
+    app.post("/signup", (req, res) => {
+        const { username, password } = req.body;
 
-  // You should also hash and salt the password for security in a real application
+        // Check if the username is already taken in the MongoDB collection
+        collection.findOne({ username }, (err, existingUser) => {
+            if (err) {
+                console.error("Error finding user:", err);
+                return res.status(500).json({ message: "Internal server error." });
+            }
 
-  res.json({ message: 'Signup successful.' });
-});
+            if (existingUser) {
+                return res.status(400).json({ message: "Username already exists." });
+            }
 
-// Route for user login
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
+            // Insert the user into the MongoDB collection
+            collection.insertOne({ username, password }, (err, result) => {
+                if (err) {
+                    console.error("Error inserting user:", err);
+                    return res.status(500).json({ message: "Internal server error." });
+                }
 
-  // Find the user in the database
-  const user = users.find(user => user.username === username);
+                res.json({ message: "Signup successful." });
+            });
+        });
+    });
 
-  if (!user || user.password !== password) {
-    return res.status(401).json({ message: 'Invalid credentials.' });
-  }
+    app.post("/login", (req, res) => {
+        const { username, password } = req.body;
 
-  res.json({ message: 'Login successful.' });
-});
+        // Find the user in the MongoDB collection
+        collection.findOne({ username, password }, (err, user) => {
+            if (err) {
+                console.error("Error finding user:", err);
+                return res.status(500).json({ message: "Internal server error." });
+            }
 
+            if (!user) {
+                return res.status(401).json({ message: "Invalid credentials." });
+            }
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+            res.json({ message: "Login successful." });
+        });
+    });
+
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port}`);
+    });
 });
