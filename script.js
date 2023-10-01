@@ -1,4 +1,3 @@
-const darkModeToggle = document.getElementById('darkModeToggle');
 const toggleSwitch = document.getElementById('toggleSwitch');
 const body = document.body;
 
@@ -11,13 +10,25 @@ if (currentTheme) {
     }
 }
 
-// Toggle dark mode on button click
-darkModeToggle.addEventListener('click', () => {
-    if (body.classList.contains('dark-mode')) {
-        body.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light-mode');
-    } else {
+// Toggle dark mode on checkbox change
+toggleSwitch.addEventListener('change', () => {
+    if (toggleSwitch.checked) {
         body.classList.add('dark-mode');
         localStorage.setItem('theme', 'dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light-mode');
     }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburgerMenu = document.getElementById("hamburgerMenu");
+    const verticalMenu = document.getElementById("verticalMenu");
+  
+    hamburgerMenu.addEventListener("click", function () {
+      verticalMenu.classList.toggle("show-vertical-menu");
+    });
+  });
+  

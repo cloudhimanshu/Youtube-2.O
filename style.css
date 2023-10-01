@@ -4,20 +4,10 @@ body {
   margin: 0;
 }
 
-.navbar {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 20px;
-}
-
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
   color: #333;
-}
-
-.navbar-toggler-icon {
-  background-color: #333;
 }
 
 .nav-link {
@@ -39,7 +29,6 @@ body {
 
 .btn-primary {
   background-color: #ff0000;
-  background-image: ;
   border-color: #ff0000;
   border-radius: 30px;
 }
@@ -241,5 +230,97 @@ input[type="checkbox"]:checked + label {
     background-color: #222;
     color: #fff;
 }
+/* Hamburger Menu */
+#hamburgerMenu {
+  cursor: pointer;
+  display: block;
+  margin-top: 5px; /* Adjust as needed to align it with the vertical menu */
+}
+
+/* Vertical Menu */
+.vertical-menu {
+  position: absolute;
+  top: 0;
+  left: -200px; /* Hide the menu by default */
+  background-color: #000000;
+  width: 200px; /* Adjust the width as needed */
+  height: 1743px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+  box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.vertical-menu.show-vertical-menu {
+  left: 0; /* Show the menu when it's active */
+}
+
+#verticalMenu ul {
+  list-style: none;
+  padding: 0;
+}
+
+#verticalMenu li {
+  padding: 8px;
+  border-top: 1px solid #ff2b2b; /* Add a vertical separator */
+}
+
+#verticalMenu a {
+  text-decoration: none;
+  color: #ffffff;
+  /* Rotate the text 90 degrees 
+  transform-origin: left center;
+  white-space: nowrap; /* Prevent text from wrapping */
+  display: block;
+  padding: 8px;
+}
+
+#verticalMenu a:hover {
+  background-color: #ff0808;
+}
 
 
+#verticalMenu li {
+  padding: 8px;
+  /* border-top: 1px solid #ff2b2b; */ /* Remove or comment out this line */
+}
+/* Custom styles for the .navbar-toggler-icon */
+.navbar-toggler-icon {
+  /* Background color and padding to create a button-like appearance */
+  background-color: #ff0000;
+  padding: 4px 18px;
+  
+  /* Set the icon color and size */
+  color: #fff;
+  font-size: 20px;
+
+  /* Add a border and border-radius for a button-like look */
+  border: 1px solid #000000;
+  border-radius: 4px;
+  
+  /* Add a transition for smooth hover effects */
+  transition: background-color 0.3s ease, color 0.3s ease;
+   /* Move the icon to the right */
+   margin-left: auto;
+}
+
+/* On hover, change background and icon color */
+.navbar-toggler-icon:hover {
+  background-color: #d89606;
+  color: #fff;
+}
+
+/* When toggled, change background and icon color */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: #ff0000; /* Change to your desired color */
+  color: #fff;
+}
+
+/* Optional: Remove the border when the icon is toggled */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  border: none;
+}
+
+/* Optional: Add a transition for the border change */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  transition: background-color 0.3s ease, border 0.3s ease;
+}

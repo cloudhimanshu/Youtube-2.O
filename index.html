@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anime-Rangers</title>
+  <title>Video Website - all Video at one place</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Tailwind CSS -->
@@ -22,27 +22,27 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
       <a class="navbar-brand" href="index.html">Video.Ai</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="index.html" onclick="goToHome()">Home</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="#">Anime</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cartoons</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="getstart.html">SignUp</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="getstart.html">Login</a>
-          </li>
-        </ul>
+       <!-- Hamburger Menu -->
+    <button class="navbar-toggler" id="hamburgerMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Vertical Menu -->
+    <div class="vertical-menu" id="verticalMenu">
+      <ul >
+        <li >
+          <a  href="index.html" onclick="goToHome()">Home</a>
+        </li>
+        <li >
+          <a  href="#">Anime</a>
+        </li>
+        <li>
+          <a href="#">Cartoons</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="getstart.html">SignUp/login</a>
+        </li>
+      </ul>
+    </div>
         <div class="search-box ml-auto">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" id="searchInput">
@@ -86,25 +86,19 @@
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Trending</a></li>
-            <li><a href="#">Subscriptions</a></li>
-            <li><a href="#">Library</a></li>
-            <li><a href="#">History</a></li>
+            
           </ul>
         </div>
         <div class="col-md-4">
-          <h5>About Us</h5>
+      
           <ul>
             <li><a href="#">About YouTube</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Copyright</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">Creators</a></li>
           </ul>
         </div>
         <div class="col-md-4">
-          <h5>Connect</h5>
           <ul>
-            <li><a href="#">Facebook</a></li>
             <li><a href="https://www.twitter.com/rtxhoney">Twitter</a></li>
             <li><a href="https://instagram.com/rtxhoney">Instagram</a></li>
             <li><a href="https://businesskrlo.blogspot.com/">Business Krlo</a></li>

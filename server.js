@@ -1,15 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const { MongoClient } = require("mongodb");
 const app = express();
 const port = 3000;
-const MongoClient = require("mongodb").MongoClient;
-const uri = "mongodb://localhost:27017"; // MongoDB connection URI
-const client = new MongoClient(uri, { useNewUrlParser: true });
 
 app.use(bodyParser.json());
 
+const mongoURI = "mongodb://localhost:27017"; // MongoDB connection URI
+const dbName = "YOUR_DB_NAME"; // Replace with your database name
+const collectionName = "users"; // Collection name for user data
+
 // Connect to the MongoDB server
-client.connect((err) => {
+MongoClient.connect(mongoURI, { useNewUrlParser: true }, (err, client) => {
     if (err) {
         console.error("Error connecting to MongoDB:", err);
         return;
@@ -17,9 +19,10 @@ client.connect((err) => {
     console.log("Connected to MongoDB");
 
     // Specify the database and collection you want to work with
-    const db = client.db("mydatabase"); // Replace "mydatabase" with your database name
-    const collection = db.collection("users");
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
 
+    // Define a route for user signup
     app.post("/signup", (req, res) => {
         const { username, password } = req.body;
 
@@ -46,6 +49,7 @@ client.connect((err) => {
         });
     });
 
+    // Define a route for user login
     app.post("/login", (req, res) => {
         const { username, password } = req.body;
 
@@ -64,6 +68,7 @@ client.connect((err) => {
         });
     });
 
+    // Start the Express server
     app.listen(port, () => {
         console.log(`Server is running on port ${port}`);
     });

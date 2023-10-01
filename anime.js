@@ -1,5 +1,14 @@
 // YouTube Data API key
 const apiKey = "AIzaSyA9-BWw7UzkAXwc_UoOlNl08KjHZnsrudc";
+const searchInput = document.getElementById("searchInput");
+
+// Add an event listener for the "keydown" event on the search input
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    // If the "Enter" key is pressed, call the searchVideos function
+    searchVideos();
+  }
+});
 
 // Function to fetch recommended videos
 function fetchRecommendedVideos() {
