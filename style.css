@@ -1,13 +1,13 @@
 body {
-  background-color: #ffffff;
+  background-color: hsl(0, 0%, 100%);
   font-family: Arial, sans-serif;
   margin: 0;
 }
 
 .navbar-brand {
-  font-size: 24px;
+  font-size: 34px;
   font-weight: bold;
-  color: #333;
+  color: #aaa4a4;
 }
 
 .nav-link {
@@ -71,25 +71,27 @@ body {
 }
 
 .container {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 #videoContainer {
-  flex: 0 0 60%; /* Adjust the flex property to control the width */
-  max-width: 60%; /* Adjust the max-width property to make the container smaller */
+  flex: 10 0 160%; /* Adjust the flex property to control the width */
+  max-width: 160%; /* Adjust the max-width property to make the container smaller */
 }
 
 
 #commentsContainer {
-  flex: 0 0 70%;
-  max-width: 70%;
+  flex: 10 0 70%;
+  max-width: 180%;
   margin-right: 10px;
   padding: 20px;
-  background-color: #e21d1d;
+  background-color: #000000;
   border-radius: 6px;
+  color: white;
 }
 
 .comment {
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .comment .user-avatar {
@@ -112,12 +114,12 @@ body {
 }
 
 .comment .comment-text {
-  color: #333;
+  color: #ffffff;
 }
 
 .comment .comment-date {
   font-size: 12px;
-  color: #888;
+  color: #ffffff;
 }
 
 .comment .reply-button {
@@ -131,7 +133,7 @@ body {
   max-width: 100%;
   height: calc(100vh - 110px);
   overflow-y: auto;
-  padding: 120px;
+  padding: 20px;
   background-color: #f9f9f9;
   border-radius: 6px;
 }
@@ -173,7 +175,7 @@ body {
 }
 
 .footer p {
-  margin: 0;
+  margin: 10;
 }
 
 /* @media (max-width: 768px) {
@@ -227,7 +229,7 @@ input[type="checkbox"]:checked + label {
 }
 
 .dark-mode {
-    background-color: #222;
+    background-color: #283142;
     color: #fff;
 }
 /* Hamburger Menu */
@@ -239,12 +241,13 @@ input[type="checkbox"]:checked + label {
 
 /* Vertical Menu */
 .vertical-menu {
+  height: 50rem;
+  width: 10rem;
   position: absolute;
   top: 0;
   left: -200px; /* Hide the menu by default */
   background-color: #000000;
-  width: 200px; /* Adjust the width as needed */
-  height: 1743px;
+  
   transition: left 0.3s ease-in-out;
   z-index: 1;
   box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.2);
@@ -260,8 +263,9 @@ input[type="checkbox"]:checked + label {
 }
 
 #verticalMenu li {
+  
   padding: 8px;
-  border-top: 1px solid #ff2b2b; /* Add a vertical separator */
+  border-top: 1px solid #ffd82b; /* Add a vertical separator */
 }
 
 #verticalMenu a {
@@ -271,11 +275,11 @@ input[type="checkbox"]:checked + label {
   transform-origin: left center;
   white-space: nowrap; /* Prevent text from wrapping */
   display: block;
-  padding: 8px;
+  padding: 11px;
 }
 
 #verticalMenu a:hover {
-  background-color: #ff0808;
+  background-color: #ff6b08;
 }
 
 
@@ -286,7 +290,7 @@ input[type="checkbox"]:checked + label {
 /* Custom styles for the .navbar-toggler-icon */
 .navbar-toggler-icon {
   /* Background color and padding to create a button-like appearance */
-  background-color: #ff0000;
+  background-color: #ffe604;
   padding: 4px 18px;
   
   /* Set the icon color and size */
@@ -328,11 +332,12 @@ input[type="checkbox"]:checked + label {
 
 /* Sidebar Container Styles */
 #sidebarContainer {
-  flex: 0 0 30%; /* Adjust the width as needed */
-  max-width: YOUR_MAX_WIDTH; /* Set a maximum width for the sidebar */
+  flex: 10 0 30%; /* Adjust the width as needed */
+  width: 70rem; /* Set a maximum width for the sidebar */
+  height: 500rem;
   overflow-y: auto; /* Enable vertical scrolling if content overflows */
-  background-color: #f9f9f9; /* Background color for the sidebar */
-  border-left: 1px solid #ddd; /* Add a border to separate it from the main content */
+  background-color: #fc0606; /* Background color for the sidebar */
+  border-left: 11px solid #ddd; /* Add a border to separate it from the main content */
   padding: 0; /* Remove padding from the container */
 }
 

@@ -32,3 +32,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
+
+  
+  window.addEventListener('error', function (e) {
+    // Check if it's a 404 error
+    if (e && e.message && e.message.includes('404')) {
+      const errorContainer = document.getElementById('errorContainer');
+      const errorMessage = document.getElementById('errorMessage');
+
+      // Display the error message in the container
+      errorMessage.textContent = '404 - Not Found';
+      errorContainer.style.display = 'block';
+    }
+  });

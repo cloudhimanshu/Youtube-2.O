@@ -1,14 +1,14 @@
 /* Reset default styles */
 * {
     margin: 0;
-    padding: 0;
+    padding: 10;
     box-sizing: border-box;
   }
   
   /* Global styles */
   body {
     font-family: Arial, sans-serif;
-    background-color: #d1c4e9;
+    background-color: #ffffff;
   }
   
   /* Header section */

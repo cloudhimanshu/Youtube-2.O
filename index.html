@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="errorContainer" style="display: none;">
+    <p id="errorMessage"></p>
+  </div>
+  
   <div class="dark-mode-toggle" id="darkModeToggle">
     <input type="checkbox" id="toggleSwitch">
     <label for="toggleSwitch"></label>
@@ -21,7 +25,7 @@
 <script src="script.js"></script>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Video.Ai</a>
+      <a class="navbar-brand" href="index.html">Youtube</a>
        <!-- Hamburger Menu -->
     <button class="navbar-toggler" id="hamburgerMenu">
       <span class="navbar-toggler-icon"></span>
@@ -35,7 +39,7 @@
         <li >
           <a  href="#">Anime</a>
         </li>
-        <li>
+        <li> 
           <a href="#">Cartoons</a>
         </li>
         <li class="nav-item">
@@ -48,7 +52,7 @@
             <input type="text" class="form-control" placeholder="Search" id="searchInput">
             <div class="input-group-append">
               <button class="btn btn-primary" type="button" onclick="searchVideos()">
-                <i class="fas fa-search"></i>
+                <i class="fas fa-search">Search</i>
               </button>
             </div>
           </div>
@@ -57,14 +61,14 @@
       </div>
     </div>
   </nav>
-
+<!-- 
   <div class="jumbotron">
     <div class="container">
       <h1 class="text-4xl font-bold">Welcome to Anime-Rangers!</h1>
       <p class="text-lg">Discover the best anime and cartoons here.</p>
       <a class="btn btn-primary btn-lg" href="getstart.html" role="button">Get Started</a>
     </div>
-  </div>
+  </div> -->
 
   <div class="container">
     <div class="row" id="videoContainer">

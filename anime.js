@@ -12,7 +12,7 @@ searchInput.addEventListener("keydown", (event) => {
 
 // Function to fetch recommended videos
 function fetchRecommendedVideos() {
-  const maxResults = 11; // Number of recommended videos to fetch
+  const maxResults = 100; // Number of recommended videos to fetch
   const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=${maxResults}&key=${apiKey}`;
 
   fetch(url)
@@ -106,7 +106,7 @@ function searchVideos() {
 
 // Function to fetch comments for a video
 function fetchVideoComments(videoId) {
-  const maxResults = 11110; // Number of comments to fetch
+  const maxResults = 100; // Number of comments to fetch
   const url = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=${maxResults}&key=${apiKey}`;
 
   fetch(url)
