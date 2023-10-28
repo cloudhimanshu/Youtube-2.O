@@ -11,6 +11,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="custom.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="favicon" href="favicon.png" type="image/x-icon">
 </head>
 <body>
   <div id="errorContainer" style="display: none;">
@@ -72,12 +73,21 @@
 
   <div class="container">
     <div class="row" id="videoContainer">
-      <!-- Videos will be dynamically added here -->
+      <!-- Video Player will be dynamically added here -->
     </div>
-    <div id="commentsContainer"><h1>Comments</h1>
-      <!-- Comments will be dynamically added here -->
+    <div class="row" id="commentsContainer" style="display: none;">
+<!-- Comments will be dynamically added here -->
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3" id="sidebarContainer" style="display: none;">
+        <!-- Recommended videos will be dynamically added here -->
+      </div>
+    </div>
+  </div>
+  
+
 
   <footer class="py-4 bg-gray-900 text-white">
     <div class="container text-center">

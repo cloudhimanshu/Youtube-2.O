@@ -1,5 +1,5 @@
 // YouTube Data API key
-const apiKey = "AIzaSyA9-BWw7UzkAXwc_UoOlNl08KjHZnsrudc";
+const apiKey = "AIzaSyCRgGjLgkVWhuce0BI5Sa8WNbaLaP3N-Ts";
 const searchInput = document.getElementById("searchInput");
 
 // Add an event listener for the "keydown" event on the search input
@@ -116,11 +116,12 @@ function fetchVideoComments(videoId) {
         const comments = data.items;
 
         // Clear existing comments container
-        document.getElementById("commentsContainer").innerHTML = "";
+        document.getElementById("commentsContainer").innerHTML = "<h1>Comment Section</h1>";
 
         comments.forEach((comment) => {
           const commentText = comment.snippet.topLevelComment.snippet.textDisplay;
           const userProfileImageUrl = comment.snippet.topLevelComment.snippet.authorProfileImageUrl;
+          const authorDisplayName = comment.snippet.topLevelComment.snippet.authorDisplayName; // Add this line
 
           // Create comment element
           const commentElement = document.createElement("div");
@@ -131,12 +132,18 @@ function fetchVideoComments(videoId) {
           userImageElement.src = userProfileImageUrl;
           userImageElement.classList.add("user-image");
 
+          // Create username element
+          const userNameElement = document.createElement("p");
+          userNameElement.textContent = `${authorDisplayName}`;
+          userNameElement.classList.add("user-name"); // Add a class for styling
+
           // Create comment text element
           const commentTextElement = document.createElement("p");
           commentTextElement.textContent = commentText;
 
-          // Append user image and comment text elements to the comment element
+          // Append user image, username, and comment text elements to the comment element
           commentElement.appendChild(userImageElement);
+          commentElement.appendChild(userNameElement);
           commentElement.appendChild(commentTextElement);
 
           // Append comment element to the container
@@ -152,6 +159,7 @@ function fetchVideoComments(videoId) {
     });
 }
 
+
 // Function to fetch recommended videos for the sidebar
 function fetchRecommendedVideosForSidebar() {
   const maxResults = 10; // Number of recommended videos to fetch
@@ -163,15 +171,16 @@ function fetchRecommendedVideosForSidebar() {
       if (data.items.length > 0) {
         const videos = data.items;
 
-        // Clear existing sidebar container
-        document.getElementById("sidebarContainer").innerHTML = "";
+        // Clear the existing sidebar container
+        const sidebarContainer = document.getElementById("sidebarContainer");
+        sidebarContainer.innerHTML = "";
 
         videos.forEach((video) => {
           const videoId = video.id;
           const videoTitle = video.snippet.title;
           const videoThumbnail = video.snippet.thumbnails.medium.url;
 
-          // Create video card for the sidebar
+          // Create a video card for the sidebar
           const cardHtml = `
             <div class="card mb-3">
               <img src="${videoThumbnail}" class="card-img-top" alt="${videoTitle}">
@@ -182,8 +191,8 @@ function fetchRecommendedVideosForSidebar() {
             </div>
           `;
 
-          // Append video card to the sidebar container
-          document.getElementById("sidebarContainer").innerHTML += cardHtml;
+          // Append the video card to the sidebar container
+          sidebarContainer.innerHTML += cardHtml;
         });
       } else {
         // No recommended videos found
@@ -193,29 +202,32 @@ function fetchRecommendedVideosForSidebar() {
     .catch((error) => {
       console.log("Error fetching recommended videos for sidebar:", error);
     });
-     const currentVideoId = "YOUR_CURRENT_VIDEO_ID";
-    fetchRecommendedVideosForSidebar(currentVideoId);
 }
 
-// Function to watch video
+// Call the fetchRecommendedVideosForSidebar function when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  fetchRecommendedVideosForSidebar();
+});
+
 function watchVideo(videoId) {
   const videoUrl = `https://www.youtube.com/embed/${videoId}`;
 
   // Replace the existing video container with the new video iframe
   document.getElementById("videoContainer").innerHTML = `
-    <div class="row">
-      <div class="col-md-9">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="${videoUrl}" allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div id="sidebarContainer">
-          <!-- Recommended videos will be dynamically added here -->
-        </div>
+    <div class="col-md-9">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="${videoUrl}" allowfullscreen></iframe>
       </div>
     </div>
   `;
+
+  // Show the sidebar
+  const sidebarContainer = document.getElementById("sidebarContainer");
+  sidebarContainer.style.display = "block";
+
+  // Show the comments container
+  const commentsContainer = document.getElementById("commentsContainer");
+  commentsContainer.style.display = "block";
 
   // Fetch comments for the video
   fetchVideoComments(videoId);
@@ -223,6 +235,8 @@ function watchVideo(videoId) {
   // Fetch recommended videos for the sidebar
   fetchRecommendedVideosForSidebar();
 }
+
+
 
 // Fetch recommended videos on page load
 document.addEventListener("DOMContentLoaded", () => {
